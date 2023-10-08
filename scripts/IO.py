@@ -9,6 +9,7 @@
 import serial
 from utils import serial_port_init
 from time import sleep
+import chardet
 
 class Interface:
   def __init__(self) -> None:
@@ -21,10 +22,13 @@ class Interface:
         data: bytes recieved
     """
     while True:
-      data = self.serialPort_.read_all()
+      data = self.serialPort_.readall()
       if data == "":
+        print('none')
         continue
       else:
+        result = chardet.detect(data)
+        print(result)
         break
       sleep(0.02)
     return data

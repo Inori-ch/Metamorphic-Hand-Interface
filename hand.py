@@ -9,9 +9,9 @@
 from scripts import action
 
 def Grab():
-  grab = action.Action("configs/grab.yaml")
+  grab = action.Action("configs\\grab.yaml")
   grab.Run()
 
 def Release():
-  release = action.Action("configs/release.yaml")
+  release = action.Action("configs\\release.yaml")
   release.Run()

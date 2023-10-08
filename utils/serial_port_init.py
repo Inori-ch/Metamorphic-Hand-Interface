@@ -16,7 +16,7 @@ def Init():
   Returns:
       serialPort (serial.Serial): object
   """
-  param = Load("configs/serial.yaml")
+  param = Load("configs\\serial.yaml")
   try:
     serialPort = serial.Serial(port = param['port'], baudrate = param['baud_rate'], timeout = param['time_out'])
     print('Open serial port', param['port'], 'success!!!')

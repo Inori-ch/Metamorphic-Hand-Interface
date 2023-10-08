@@ -23,6 +23,6 @@ class Action:
       interface.Send(command['command'])
       callBack = interface.Read()
       print(callBack)
-      if(callBack == 'Arrive!'):
+      if(callBack == 'Arrive'):
         break
 
