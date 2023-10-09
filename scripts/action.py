@@ -9,6 +9,7 @@
 
 from utils import *
 from scripts import IO
+from time import sleep
 
 class Action:
   """Action base, instance with diff config path to grab or release
@@ -17,12 +18,15 @@ class Action:
     self.commandPath_ = commandPath
 
   def Run(self):
+    sleep(0.2)
     interface = IO.Interface()
     command = load_config.Load(self.commandPath_)
+    interface.Send(command['command'])
+    sleep(1)
     while(True):
-      interface.Send(command['command'])
       callBack = interface.Read()
       print(callBack)
       if(callBack == 'Arrive'):
         break
+      sleep(0.2)
 

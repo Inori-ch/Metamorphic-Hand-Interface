@@ -40,7 +40,7 @@ class Interface:
         data (bytes): command
     """
     if (self.serialPort_.isOpen()):
-      self.serialPort_.write(data.encode('utf-8'))  # 编码
+      self.serialPort_.write(data.encode('utf-16'))  # 编码
       # print("success ", data)
     # else:
       # print("failed!!!")
