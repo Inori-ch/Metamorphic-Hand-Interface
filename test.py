@@ -7,6 +7,11 @@
 #
 ##
 import hand
+from time import sleep
 
 if __name__ == "__main__":
-  hand.Grab()
+  hand_ = hand.Hand()
+  hand_.Run('idle')
+  
+  hand_.Run('open')
+  

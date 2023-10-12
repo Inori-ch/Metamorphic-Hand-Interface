@@ -19,6 +19,8 @@ def Init():
   param = Load("configs/serial.yaml")
   try:
     serialPort = serial.Serial(port = param['port'], baudrate = param['baud_rate'], timeout = param['time_out'])
+    serialPort.setDTR(False)
+    serialPort.setRTS(False)
     print('Open serial port', param['port'], 'success!!!')
     print('Baudrate:', param['baud_rate'], 'timeout:', param['time_out'])
     return serialPort

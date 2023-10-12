@@ -22,16 +22,17 @@ class Interface:
         data: bytes recieved
     """
     while True:
-      data = self.serialPort_.readall()
-      if data == "":
-        print('none')
+      data = self.serialPort_.read_all()
+      result = data.decode('ascii')
+      if result == '':
+        # print('none')
         continue
       else:
-        result = chardet.detect(data)
-        print(result)
+        # result = chardet.detect(data)
+        # print(result)
         break
       sleep(0.02)
-    return data
+    return result
   
   def Send(self, data):
     """Send data to serial port
@@ -40,7 +41,8 @@ class Interface:
         data (bytes): command
     """
     if (self.serialPort_.isOpen()):
-      self.serialPort_.write(data.encode('utf-16'))  # 编码
+      self.serialPort_.write((data + '\r\n').encode('ascii'))  # 编码
+      sleep(0.02)
       # print("success ", data)
     # else:
       # print("failed!!!")

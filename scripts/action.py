@@ -8,25 +8,22 @@
 ##
 
 from utils import *
-from scripts import IO
 from time import sleep
 
 class Action:
   """Action base, instance with diff config path to grab or release
   """
-  def __init__(self, commandPath) -> None:
-    self.commandPath_ = commandPath
+  def __init__(self, command) -> None:
+    self.command_ = command
 
-  def Run(self):
+  def Run(self, interface):
     sleep(0.2)
-    interface = IO.Interface()
-    command = load_config.Load(self.commandPath_)
-    interface.Send(command['command'])
+    interface.Send(self.command_)
     sleep(1)
-    while(True):
-      callBack = interface.Read()
-      print(callBack)
-      if(callBack == 'Arrive'):
-        break
-      sleep(0.2)
+    # while(True):
+    #   sleep(0.2)
+    # callBack = interface.Read()
+    # print(callBack)
+      # if(callBack == ''):
+      #   break
 
