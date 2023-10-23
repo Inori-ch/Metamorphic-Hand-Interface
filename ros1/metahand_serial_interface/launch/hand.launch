@@ -1,0 +1,6 @@
+<launch>
+  <rosparam file="$(find metahand_serial_interface)/configs/metahand.yaml" ns="metahand_param" command="load"/>
+
+  <node pkg='metahand_serial_interface' name='metahand' type='node.py' respawn='false' output='screen'>
+  </node>
+</launch>

@@ -1,5 +1,5 @@
 ##
-# File: hand.py
+# File: test.py
 # Author: Inori Chan (12332378@mail.sustech.edu.cn)
 # Brief:
 # Date: 2023-09-26
@@ -10,8 +10,8 @@ import hand
 from time import sleep
 
 if __name__ == "__main__":
-  hand_ = hand.Hand()
+  hand_ = hand.Hand() 
   hand_.Run('idle')
-  
+  sleep(10)
   hand_.Run('open')
-  
+  sleep(10)

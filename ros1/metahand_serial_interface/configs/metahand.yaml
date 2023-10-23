@@ -1,0 +1,19 @@
+gesture: {
+  idle: "x2000y2000c0pd1700e1700f1700zgg1700h2000", # 待机
+  shake: "x2000y2000c0pd1750e1750f1750zgg1700h2200", # 握手
+  wait: "x1800y1500c0pd1900e1900f1900zgg1600h2200", # 待抓取
+  grab: "x2400y1600c0pd2000e2000f2100zgg1600h2200", # 抓取
+  ojbk: "x1900y2400c0pd1500e1500f2200zgg1400h2200", # ok
+  yeah: "x1900y2400c0pd2100e1550f1550zgg1440h2200", # yeah
+  open: "x1700y1500c0pd1700e1700f1700zgg1700h2000", # 展示手势，手掌打开
+  shrink: "x2200y1600c0pd1700e1700f1700zgg1700h2000", # 展示手势，手掌收缩
+  one: "x1950y2000c0pd2000e2000f1500zgg1400h2200",
+  two: "x1950y2000c0pd2000e1500f1500zgg1400h2200",
+  three: "x1950y2000c0pd1550e1550f1550zgg1400h2200"
+}
+
+serial: {
+  port: '/dev/ttyUSB0',
+  baud_rate: 9600,
+  time_out: 0.5
+}
